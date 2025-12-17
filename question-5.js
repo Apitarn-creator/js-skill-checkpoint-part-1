@@ -30,6 +30,9 @@ function calculateTotalPrice (products,promotionCode){
   else{
     return allPrice
   }
+
+
+  
 }
 
 console.log(allPrice);
