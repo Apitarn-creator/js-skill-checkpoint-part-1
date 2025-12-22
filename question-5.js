@@ -17,22 +17,20 @@ const products = [
   },
 ];
 
-const promotionCode = "";
-let allPrice = (products[0].price * products[0].quantity) + (products[1].price * products[1].quantity) + (products[2].price * products[2].quantity) ;
-
-function calculateTotalPrice (products,promotionCode){
-  if(promotionCode === "SALE20"){
-   return allPrice = allPrice * 20%;
-  }
-  else if(promotionCode === "SALE50"){
-    return allPrice = allPrice * 50%;
-   }
-  else{
-    return allPrice
+const promotionCode = "SALE20"; 
+function calculateTotalPrice(products, promotionCode) {
+  let total = 0;
+  for (let item of products) {
+    total += item.price * item.quantity;
   }
 
-
-  
+  if (promotionCode === "SALE20") {
+    return total * 0.8; 
+  } else if (promotionCode === "SALE50") {
+    return total * 0.5; 
+  } else {
+    return total; 
+  }
 }
 
-console.log(allPrice);
+console.log(calculateTotalPrice(products, promotionCode));

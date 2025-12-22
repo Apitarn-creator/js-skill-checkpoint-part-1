@@ -6,5 +6,13 @@ const inventory = [
 ];
 
 function checkInventoryQuantity (inventory){
+    let minItem = inventory[0];
+    for (let i = 0; i < inventory.length ; i++){
+      if (inventory[i].quantity < minItem.quantity){
+        minItem = inventory[i];
+      }
+    }
+
+    console.log("สินค้าที่มีจำนวนต่ำที่สุดในคลังสินค้าคือ "+ minItem.name +" ซึ่งมี " + minItem.quantity + " ชิ้น");
     
 }
